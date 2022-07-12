@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyk.mapper.VideoMapper">
+    <resultMap id="BaseResultMap" type="com.wyk.pojo.Video">
+        <id column="video_id" jdbcType="INTEGER" property="videoId"/>
+        <result column="video_name" jdbcType="VARCHAR" property="videoName"/>
+        <result column="video_url" jdbcType="VARCHAR" property="videoUrl"/>
+        <result column="video_pic" jdbcType="VARCHAR" property="videoPic"/>
+        <result column="video__authorid" jdbcType="INTEGER" property="videoAuthorid"/>
+        <result column="video_info" jdbcType="VARCHAR" property="videoInfo"/>
+        <result column="video_time" jdbcType="TIMESTAMP" property="videoTime"/>
+        <result column="video_type" jdbcType="INTEGER" property="videoType"/>
+        <result column="video_playcount" jdbcType="INTEGER" property="videoPlaycount"/>
+
+        <association property="user" javaType="com.wyk.pojo.User">
+            <id column="user_id" jdbcType="INTEGER" property="userId"/>
+            <result column="user_account" jdbcType="VARCHAR" property="userAccount"/>
+            <result column="user_password" jdbcType="VARCHAR" property="userPassword"/>
+            <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+            <result column="user_email" jdbcType="VARCHAR" property="userEmail"/>
+            <result column="user_type" jdbcType="INTEGER" property="userType"/>
+            <result column="user_profilepic" jdbcType="VARCHAR" property="userProfilepic"/>
+            <result column="user_aboutself" jdbcType="VARCHAR" property="userAboutself"/>
+        </association>
+        <association property="videotypepojo" javaType="com.wyk.pojo.Videotype">
+            <id column="videotype_id" jdbcType="INTEGER" property="videotypeId"/>
+            <result column="videotype_name" jdbcType="VARCHAR" property="videotypeName"/>
+        </association>
+
+    </resultMap>
+
+
+    <select id="UnionselectAllVideo" parameterType="com.wyk.pojo.VideoExample" resultMap="BaseResultMap">
+        SELECT * FROM video v,user u,videotype vt WHERE v.video__authorid = u.user_id AND v.video_type = vt.videotype_id ORDER BY v.video_time DESC
+  </select>
+
+
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    video_id, video_name, video_url, video_pic, video__authorid, video_info, video_time,
+    video_type, video_playcount
+  </sql>
+    <select id="selectByExample" parameterType="com.wyk.pojo.VideoExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from video
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from video
+        where video_id = #{videoId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from video
+    where video_id = #{videoId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.wyk.pojo.VideoExample">
+        delete from video
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.wyk.pojo.Video">
+    insert into video (video_id, video_name, video_url,
+      video_pic, video__authorid, video_info,
+      video_time, video_type, video_playcount
+      )
+    values (#{videoId,jdbcType=INTEGER}, #{videoName,jdbcType=VARCHAR}, #{videoUrl,jdbcType=VARCHAR},
+      #{videoPic,jdbcType=VARCHAR}, #{videoAuthorid,jdbcType=INTEGER}, #{videoInfo,jdbcType=VARCHAR},
+      #{videoTime,jdbcType=TIMESTAMP}, #{videoType,jdbcType=INTEGER}, #{videoPlaycount,jdbcType=INTEGER}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.wyk.pojo.Video">
+        insert into video
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="videoId != null">
+                video_id,
+            </if>
+            <if test="videoName != null">
+                video_name,
+            </if>
+            <if test="videoUrl != null">
+                video_url,
+            </if>
+            <if test="videoPic != null">
+                video_pic,
+            </if>
+            <if test="videoAuthorid != null">
+                video__authorid,
+            </if>
+            <if test="videoInfo != null">
+                video_info,
+            </if>
+            <if test="videoTime != null">
+                video_time,
+            </if>
+            <if test="videoType != null">
+                video_type,
+            </if>
+            <if test="videoPlaycount != null">
+                video_playcount,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="videoId != null">
+                #{videoId,jdbcType=INTEGER},
+            </if>
+            <if test="videoName != null">
+                #{videoName,jdbcType=VARCHAR},
+            </if>
+            <if test="videoUrl != null">
+                #{videoUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="videoPic != null">
+                #{videoPic,jdbcType=VARCHAR},
+            </if>
+            <if test="videoAuthorid != null">
+                #{videoAuthorid,jdbcType=INTEGER},
+            </if>
+            <if test="videoInfo != null">
+                #{videoInfo,jdbcType=VARCHAR},
+            </if>
+            <if test="videoTime != null">
+                #{videoTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="videoType != null">
+                #{videoType,jdbcType=INTEGER},
+            </if>
+            <if test="videoPlaycount != null">
+                #{videoPlaycount,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.wyk.pojo.VideoExample" resultType="java.lang.Long">
+        select count(*) from video
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update video
+        <set>
+            <if test="record.videoId != null">
+                video_id = #{record.videoId,jdbcType=INTEGER},
+            </if>
+            <if test="record.videoName != null">
+                video_name = #{record.videoName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.videoUrl != null">
+                video_url = #{record.videoUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="record.videoPic != null">
+                video_pic = #{record.videoPic,jdbcType=VARCHAR},
+            </if>
+            <if test="record.videoAuthorid != null">
+                video__authorid = #{record.videoAuthorid,jdbcType=INTEGER},
+            </if>
+            <if test="record.videoInfo != null">
+                video_info = #{record.videoInfo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.videoTime != null">
+                video_time = #{record.videoTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.videoType != null">
+                video_type = #{record.videoType,jdbcType=INTEGER},
+            </if>
+            <if test="record.videoPlaycount != null">
+                video_playcount = #{record.videoPlaycount,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update video
+        set video_id = #{record.videoId,jdbcType=INTEGER},
+        video_name = #{record.videoName,jdbcType=VARCHAR},
+        video_url = #{record.videoUrl,jdbcType=VARCHAR},
+        video_pic = #{record.videoPic,jdbcType=VARCHAR},
+        video__authorid = #{record.videoAuthorid,jdbcType=INTEGER},
+        video_info = #{record.videoInfo,jdbcType=VARCHAR},
+        video_time = #{record.videoTime,jdbcType=TIMESTAMP},
+        video_type = #{record.videoType,jdbcType=INTEGER},
+        video_playcount = #{record.videoPlaycount,jdbcType=INTEGER}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.wyk.pojo.Video">
+        update video
+        <set>
+            <if test="videoName != null">
+                video_name = #{videoName,jdbcType=VARCHAR},
+            </if>
+            <if test="videoUrl != null">
+                video_url = #{videoUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="videoPic != null">
+                video_pic = #{videoPic,jdbcType=VARCHAR},
+            </if>
+            <if test="videoAuthorid != null">
+                video__authorid = #{videoAuthorid,jdbcType=INTEGER},
+            </if>
+            <if test="videoInfo != null">
+                video_info = #{videoInfo,jdbcType=VARCHAR},
+            </if>
+            <if test="videoTime != null">
+                video_time = #{videoTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="videoType != null">
+                video_type = #{videoType,jdbcType=INTEGER},
+            </if>
+            <if test="videoPlaycount != null">
+                video_playcount = #{videoPlaycount,jdbcType=INTEGER},
+            </if>
+        </set>
+        where video_id = #{videoId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.wyk.pojo.Video">
+    update video
+    set video_name = #{videoName,jdbcType=VARCHAR},
+      video_url = #{videoUrl,jdbcType=VARCHAR},
+      video_pic = #{videoPic,jdbcType=VARCHAR},
+      video__authorid = #{videoAuthorid,jdbcType=INTEGER},
+      video_info = #{videoInfo,jdbcType=VARCHAR},
+      video_time = #{videoTime,jdbcType=TIMESTAMP},
+      video_type = #{videoType,jdbcType=INTEGER},
+      video_playcount = #{videoPlaycount,jdbcType=INTEGER}
+    where video_id = #{videoId,jdbcType=INTEGER}
+  </update>
+
+</mapper>

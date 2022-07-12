@@ -1,0 +1,177 @@
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.section {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 17px;
+    position: relative;
+}
+#page-video #submit-video .content {
+    max-height: none;
+}
+
+#submit-video-list {
+    margin-left: -10px;
+}
+ol, ul {
+    list-style: none;
+}
+.list-item {
+    margin: 0 25px;
+}
+.list-item {
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 20px 0;
+    position: relative;
+    line-height: 1;
+}
+.list-item .cover {
+    background: url(//s1.hdslb.com/bfs/static/jinkela/space/asserts/video-placeholder.png) 50%;
+    background-size: cover;
+    border-radius: 4px;
+    display: block;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .2s ease,background-color .2s ease;
+}
+.list-item .cover img {
+    width: 160px;
+    height: 100px;
+}
+.list-item .cover img {
+    box-shadow: 0 0 0 1px #edf2f9;
+    border-radius: 4px;
+    display: block;
+}
+
+.list-item .c {
+    margin-right: 10px;
+}
+.list-item .c {
+    margin-left: 180px;
+}
+.list-item .title {
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .2s ease,background-color .2s ease;
+}
+.list-item .desc {
+    height: 40px;
+    margin-bottom: 17px;
+}
+.list-item .desc {
+    color: #777;
+    line-height: 20px;
+    overflow: hidden;
+}
+.list-item .meta {
+    color: #aaa;
+        margin-bottom: 25px;
+}
+.clearfix {
+    display: block;
+}
+.list-item .meta>span {
+    float: left;
+    width: 100px;
+}
+.list-item .meta>span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list-item .meta>span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list-item .meta>span.time {
+    width: 170px;
+}
+.list-item .meta>span {
+    float: left;
+    width: 100px;
+    height: 20px;
+}
+.list-item .play .icon {
+    background-position: -280px -25px;
+}
+.list-item .meta .icon {
+    width: 12px;
+    height: 13px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    vertical-align: baseline;
+}
+.icon {
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+.list-item .comments .icon {
+    background-position: -280px -154px;
+}
+.list-item .meta .icon {
+    width: 12px;
+    height: 13px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    vertical-align: baseline;
+}
+.list-item .time .icon {
+    background-position: -280px -474px;
+}
+.list-item .meta .icon {
+    width: 12px;
+    height: 13px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    vertical-align: baseline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

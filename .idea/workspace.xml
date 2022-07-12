@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9d0fab94-e143-4ad7-a047-c26111980449" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Video.jsp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/wyk/service/impl/DanmakuServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/wyk/service/impl/UserServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/wyk/service/impl/VideoServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/wyk/controller/DanmakuController.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Software\Maven\.m2\repository" />
+        <option name="mavenHome" value="D:/Software/Maven/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\Software\Maven\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="29vtMLdjjjhqCBL5OgwSfpHZ2Xu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="添加" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../github/VideoDanmakuWebSite" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.21767241" />
+    <property name="settings.editor.selected.configurable" value="editor.breadcrumbs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\_Chrome\VideoBulletScreenWebsite\src\main\resources\static\videoResouces" />
+      <recent name="D:\_Chrome\VideoBulletScreenWebsite\src\main\resources\static" />
+      <recent name="D:\_Chrome\VideoDanmakuWebSite\src\main\resources\static\headResouces" />
+      <recent name="D:\_Chrome\VideoDanmakuWebSite\src\main\resources\static\videoResouces" />
+      <recent name="D:\_Chrome\VideoDanmakuWebSite\src\main\resources\static\images" />
+    </key>
+    <key name="OPEN_URL_DIALOG">
+      <recent name="https://github.com/xitu/gold-miner" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\_Chrome\VideoBulletScreenWebsite\src\main\resources\static\videoResouces" />
+      <recent name="D:\_Chrome\VideoDanmakuWebSite\src\main\resources\static\videoResouces" />
+      <recent name="D:\_Chrome\VideoDanmakuWebSite\src\main\webapp\WEB-INF\views\personal" />
+      <recent name="D:\_Chrome\VideoDanmakuWebSite\src\main\resources\static\headResouces" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="VideodanmakusiteApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Video" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.wyk.VideodanmakusiteApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndTriggerFile" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d0fab94-e143-4ad7-a047-c26111980449" name="默认更改列表" comment="" />
+      <created>1654005338041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654005338041</updated>
+      <workItem from="1654005343360" duration="3692000" />
+      <workItem from="1654045555444" duration="216000" />
+      <workItem from="1654069455796" duration="31584000" />
+      <workItem from="1654182413296" duration="17474000" />
+      <workItem from="1654351366016" duration="13000" />
+      <workItem from="1654418930668" duration="7000" />
+      <workItem from="1654665374151" duration="317000" />
+      <workItem from="1654681949310" duration="77000" />
+      <workItem from="1654686566940" duration="16000" />
+      <workItem from="1654688040070" duration="6000" />
+      <workItem from="1654763443934" duration="939000" />
+      <workItem from="1654776842856" duration="1334000" />
+      <workItem from="1654779157122" duration="64000" />
+      <workItem from="1654779459747" duration="261000" />
+      <workItem from="1654779906149" duration="297000" />
+      <workItem from="1654780479640" duration="811000" />
+      <workItem from="1654781555034" duration="215000" />
+      <workItem from="1654782242991" duration="245000" />
+      <workItem from="1654782668718" duration="232000" />
+      <workItem from="1654784142036" duration="7038000" />
+      <workItem from="1654791976400" duration="301000" />
+      <workItem from="1654836781035" duration="9514000" />
+      <workItem from="1654849225191" duration="4015000" />
+      <workItem from="1657026787451" duration="687000" />
+      <workItem from="1657061697985" duration="2701000" />
+      <workItem from="1657208822472" duration="722000" />
+      <workItem from="1657234744652" duration="155000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

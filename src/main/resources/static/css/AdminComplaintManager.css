@@ -1,0 +1,29 @@
+.VideoTitle{
+	width: 150px;
+}
+.danmakutype{
+	padding-left: 10px;
+}
+.hidden{
+	position: absolute;
+	background: darkgray;
+	width: 830px;
+	height: 40px;
+	margin-left: -20px;
+	margin-top: -10px;
+	filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.7;
+	visibility: hidden;
+	
+}
+.ok{
+ font-size: 40px;
+ color: #009688;
+ float: right;
+ margin-top: -2px;
+}
+
+.complaintList{
+	width: 500px;
+	height: 500px;
+	background: white;
+}

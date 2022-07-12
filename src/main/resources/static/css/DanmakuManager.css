@@ -1,0 +1,80 @@
+.danmakuList li{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.danmakuList span{
+	display: block;
+	float: left;
+}
+.danmakuList .danmakuId{
+	width: 80px;
+}
+
+.danmakuList .danmakutime{
+	width: 60px;
+}
+
+.danmakuList .danmakucontent{
+	width: 200px;
+}
+
+.danmakuList .danmakutype{
+	width: 80px;
+}
+
+.danmakuList .danmakuuserid{
+	width: 80px;
+}
+
+.danmakuList .danmakusendtime{
+	width: 100px;
+}
+
+.danmakuList .danmakustatus{
+	width: 50px;
+}
+
+.danmakuList .danmakumanager .layui-btn-group{
+	margin-top: -5px;
+	margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

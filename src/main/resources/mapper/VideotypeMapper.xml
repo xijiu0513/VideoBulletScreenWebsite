@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyk.mapper.VideotypeMapper">
+    <resultMap id="BaseResultMap" type="com.wyk.pojo.Videotype">
+        <id column="videotype_id" jdbcType="INTEGER" property="videotypeId"/>
+        <result column="videotype_name" jdbcType="VARCHAR" property="videotypeName"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    videotype_id, videotype_name
+  </sql>
+    <select id="selectByExample" parameterType="com.wyk.pojo.VideotypeExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from videotype
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from videotype
+        where videotype_id = #{videotypeId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from videotype
+    where videotype_id = #{videotypeId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.wyk.pojo.VideotypeExample">
+        delete from videotype
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.wyk.pojo.Videotype">
+    insert into videotype (videotype_id, videotype_name)
+    values (#{videotypeId,jdbcType=INTEGER}, #{videotypeName,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.wyk.pojo.Videotype">
+        insert into videotype
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="videotypeId != null">
+                videotype_id,
+            </if>
+            <if test="videotypeName != null">
+                videotype_name,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="videotypeId != null">
+                #{videotypeId,jdbcType=INTEGER},
+            </if>
+            <if test="videotypeName != null">
+                #{videotypeName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.wyk.pojo.VideotypeExample" resultType="java.lang.Long">
+        select count(*) from videotype
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update videotype
+        <set>
+            <if test="record.videotypeId != null">
+                videotype_id = #{record.videotypeId,jdbcType=INTEGER},
+            </if>
+            <if test="record.videotypeName != null">
+                videotype_name = #{record.videotypeName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update videotype
+        set videotype_id = #{record.videotypeId,jdbcType=INTEGER},
+        videotype_name = #{record.videotypeName,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.wyk.pojo.Videotype">
+        update videotype
+        <set>
+            <if test="videotypeName != null">
+                videotype_name = #{videotypeName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where videotype_id = #{videotypeId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.wyk.pojo.Videotype">
+    update videotype
+    set videotype_name = #{videotypeName,jdbcType=VARCHAR}
+    where videotype_id = #{videotypeId,jdbcType=INTEGER}
+  </update>
+</mapper>

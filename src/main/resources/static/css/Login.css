@@ -1,0 +1,18 @@
+
+body{
+	background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+}
+
+.LoginTitle{
+	margin: 10px auto;
+	width: 100px;
+	font-size: 20px;
+}
+
+.LoginMain{
+	background-color: white;
+	margin: 100px auto;
+	padding: 10px 20px;
+	width: 600px;
+	height: 800px;
+}

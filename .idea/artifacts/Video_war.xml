@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Video:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Video</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="videodanmakusite-0.1.war">
+      <element id="artifact" artifact-name="Video:war exploded" />
+    </root>
+  </artifact>
+</component>

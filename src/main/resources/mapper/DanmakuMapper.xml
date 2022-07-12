@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyk.mapper.DanmakuMapper">
+    <resultMap id="BaseResultMap" type="com.wyk.pojo.Danmaku">
+        <id column="danmaku_id" jdbcType="INTEGER" property="danmakuId"/>
+        <result column="danmaku_videoid" jdbcType="INTEGER" property="danmakuVideoid"/>
+        <result column="danmaku_videotime" jdbcType="INTEGER" property="danmakuVideotime"/>
+        <result column="danmaku_content" jdbcType="VARCHAR" property="danmakuContent"/>
+        <result column="danmaku_color" jdbcType="VARCHAR" property="danmakuColor"/>
+        <result column="danmaku_type" jdbcType="INTEGER" property="danmakuType"/>
+        <result column="danmaku_fontsize" jdbcType="INTEGER" property="danmakuFontsize"/>
+        <result column="danmaku_senderid" jdbcType="INTEGER" property="danmakuSenderid"/>
+        <result column="danmaku_sendtime" jdbcType="TIMESTAMP" property="danmakuSendtime"/>
+        <result column="danmaku_status" jdbcType="INTEGER" property="danmakuStatus"/>
+
+        <association property="sender" javaType="com.wyk.pojo.User">
+            <id column="user_id" jdbcType="INTEGER" property="userId"/>
+            <result column="user_account" jdbcType="VARCHAR" property="userAccount"/>
+            <result column="user_password" jdbcType="VARCHAR" property="userPassword"/>
+            <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+            <result column="user_email" jdbcType="VARCHAR" property="userEmail"/>
+            <result column="user_type" jdbcType="INTEGER" property="userType"/>
+            <result column="user_profilepic" jdbcType="VARCHAR" property="userProfilepic"/>
+            <result column="user_aboutself" jdbcType="VARCHAR" property="userAboutself"/>
+        </association>
+    </resultMap>
+
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    danmaku_id, danmaku_videoid, danmaku_videotime, danmaku_content, danmaku_color, danmaku_type,
+    danmaku_fontsize, danmaku_senderid, danmaku_sendtime, danmaku_status
+  </sql>
+    <select id="selectByExample" parameterType="com.wyk.pojo.DanmakuExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from danmaku
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from danmaku
+        where danmaku_id = #{danmakuId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from danmaku
+    where danmaku_id = #{danmakuId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.wyk.pojo.DanmakuExample">
+        delete from danmaku
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.wyk.pojo.Danmaku" useGeneratedKeys="true" keyProperty="danmakuId">
+    insert into danmaku (danmaku_id, danmaku_videoid, danmaku_videotime,
+      danmaku_content, danmaku_color, danmaku_type,
+      danmaku_fontsize, danmaku_senderid, danmaku_sendtime,
+      danmaku_status)
+    values (#{danmakuId,jdbcType=INTEGER}, #{danmakuVideoid,jdbcType=INTEGER}, #{danmakuVideotime,jdbcType=INTEGER},
+      #{danmakuContent,jdbcType=VARCHAR}, #{danmakuColor,jdbcType=VARCHAR}, #{danmakuType,jdbcType=INTEGER},
+      #{danmakuFontsize,jdbcType=INTEGER}, #{danmakuSenderid,jdbcType=INTEGER}, #{danmakuSendtime,jdbcType=TIMESTAMP},
+      #{danmakuStatus,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.wyk.pojo.Danmaku">
+        insert into danmaku
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="danmakuId != null">
+                danmaku_id,
+            </if>
+            <if test="danmakuVideoid != null">
+                danmaku_videoid,
+            </if>
+            <if test="danmakuVideotime != null">
+                danmaku_videotime,
+            </if>
+            <if test="danmakuContent != null">
+                danmaku_content,
+            </if>
+            <if test="danmakuColor != null">
+                danmaku_color,
+            </if>
+            <if test="danmakuType != null">
+                danmaku_type,
+            </if>
+            <if test="danmakuFontsize != null">
+                danmaku_fontsize,
+            </if>
+            <if test="danmakuSenderid != null">
+                danmaku_senderid,
+            </if>
+            <if test="danmakuSendtime != null">
+                danmaku_sendtime,
+            </if>
+            <if test="danmakuStatus != null">
+                danmaku_status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="danmakuId != null">
+                #{danmakuId,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuVideoid != null">
+                #{danmakuVideoid,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuVideotime != null">
+                #{danmakuVideotime,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuContent != null">
+                #{danmakuContent,jdbcType=VARCHAR},
+            </if>
+            <if test="danmakuColor != null">
+                #{danmakuColor,jdbcType=VARCHAR},
+            </if>
+            <if test="danmakuType != null">
+                #{danmakuType,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuFontsize != null">
+                #{danmakuFontsize,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuSenderid != null">
+                #{danmakuSenderid,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuSendtime != null">
+                #{danmakuSendtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="danmakuStatus != null">
+                #{danmakuStatus,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.wyk.pojo.DanmakuExample" resultType="java.lang.Long">
+        select count(*) from danmaku
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update danmaku
+        <set>
+            <if test="record.danmakuId != null">
+                danmaku_id = #{record.danmakuId,jdbcType=INTEGER},
+            </if>
+            <if test="record.danmakuVideoid != null">
+                danmaku_videoid = #{record.danmakuVideoid,jdbcType=INTEGER},
+            </if>
+            <if test="record.danmakuVideotime != null">
+                danmaku_videotime = #{record.danmakuVideotime,jdbcType=INTEGER},
+            </if>
+            <if test="record.danmakuContent != null">
+                danmaku_content = #{record.danmakuContent,jdbcType=VARCHAR},
+            </if>
+            <if test="record.danmakuColor != null">
+                danmaku_color = #{record.danmakuColor,jdbcType=VARCHAR},
+            </if>
+            <if test="record.danmakuType != null">
+                danmaku_type = #{record.danmakuType,jdbcType=INTEGER},
+            </if>
+            <if test="record.danmakuFontsize != null">
+                danmaku_fontsize = #{record.danmakuFontsize,jdbcType=INTEGER},
+            </if>
+            <if test="record.danmakuSenderid != null">
+                danmaku_senderid = #{record.danmakuSenderid,jdbcType=INTEGER},
+            </if>
+            <if test="record.danmakuSendtime != null">
+                danmaku_sendtime = #{record.danmakuSendtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.danmakuStatus != null">
+                danmaku_status = #{record.danmakuStatus,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update danmaku
+        set danmaku_id = #{record.danmakuId,jdbcType=INTEGER},
+        danmaku_videoid = #{record.danmakuVideoid,jdbcType=INTEGER},
+        danmaku_videotime = #{record.danmakuVideotime,jdbcType=INTEGER},
+        danmaku_content = #{record.danmakuContent,jdbcType=VARCHAR},
+        danmaku_color = #{record.danmakuColor,jdbcType=VARCHAR},
+        danmaku_type = #{record.danmakuType,jdbcType=INTEGER},
+        danmaku_fontsize = #{record.danmakuFontsize,jdbcType=INTEGER},
+        danmaku_senderid = #{record.danmakuSenderid,jdbcType=INTEGER},
+        danmaku_sendtime = #{record.danmakuSendtime,jdbcType=TIMESTAMP},
+        danmaku_status = #{record.danmakuStatus,jdbcType=INTEGER}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.wyk.pojo.Danmaku">
+        update danmaku
+        <set>
+            <if test="danmakuVideoid != null">
+                danmaku_videoid = #{danmakuVideoid,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuVideotime != null">
+                danmaku_videotime = #{danmakuVideotime,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuContent != null">
+                danmaku_content = #{danmakuContent,jdbcType=VARCHAR},
+            </if>
+            <if test="danmakuColor != null">
+                danmaku_color = #{danmakuColor,jdbcType=VARCHAR},
+            </if>
+            <if test="danmakuType != null">
+                danmaku_type = #{danmakuType,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuFontsize != null">
+                danmaku_fontsize = #{danmakuFontsize,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuSenderid != null">
+                danmaku_senderid = #{danmakuSenderid,jdbcType=INTEGER},
+            </if>
+            <if test="danmakuSendtime != null">
+                danmaku_sendtime = #{danmakuSendtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="danmakuStatus != null">
+                danmaku_status = #{danmakuStatus,jdbcType=INTEGER},
+            </if>
+        </set>
+        where danmaku_id = #{danmakuId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.wyk.pojo.Danmaku">
+    update danmaku
+    set danmaku_videoid = #{danmakuVideoid,jdbcType=INTEGER},
+      danmaku_videotime = #{danmakuVideotime,jdbcType=INTEGER},
+      danmaku_content = #{danmakuContent,jdbcType=VARCHAR},
+      danmaku_color = #{danmakuColor,jdbcType=VARCHAR},
+      danmaku_type = #{danmakuType,jdbcType=INTEGER},
+      danmaku_fontsize = #{danmakuFontsize,jdbcType=INTEGER},
+      danmaku_senderid = #{danmakuSenderid,jdbcType=INTEGER},
+      danmaku_sendtime = #{danmakuSendtime,jdbcType=TIMESTAMP},
+      danmaku_status = #{danmakuStatus,jdbcType=INTEGER}
+    where danmaku_id = #{danmakuId,jdbcType=INTEGER}
+  </update>
+
+    <select id="selectPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from danmaku where danmaku_videoid =
+    </select>
+
+</mapper>

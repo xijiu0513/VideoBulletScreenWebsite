@@ -1,0 +1,167 @@
+body{
+	padding: 10px;
+}
+
+
+.player-auxiliary-danmaku-report-box {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel {
+    background: #fff;
+    color: #6d757a;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-report-panel-title {
+    border-bottom-color: #e5e9ef;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-report-panel-title {
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-bottom: 1px solid hsla(0,0%,100%,.12);
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-report-panel-title>i {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-report-content {
+    color: #222;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-report-content {
+    height: 14px;
+    line-height: 14px;
+    width: 320px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 24px auto 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-report-select-list-wrap {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-report-select-list-wrap .player-auxiliary-radios {
+    position: relative;
+    left: 13px;
+}
+
+.bui {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.bui-radio .bui-radio-wrap {
+    width: 100%;
+    font-size: 0;
+}
+
+.bui-radio .bui-radio-normal .bui-radio-item {
+    height: 33px;
+}
+
+.bui-radio .bui-radio-item {
+    position: relative;
+    display: inline-block;
+}
+
+.bui-radio .bui-radio-normal .bui-radio-label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.bui-radio .bui-radio-label {
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-danmaku-report-bottom {
+    clear: both;
+    text-align: right;
+    text-align: center;
+}
+
+.player-auxiliary-danmaku-report-box .player-auxiliary-danmaku-report-panel .player-auxiliary-danmaku-report-bottom .bui-button {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    border: 0;
+    margin: 16px auto;
+    border-radius: 4px;
+}
+
+.bui-button.bui-button-blue, .bui-button.bui-button-gray3:hover {
+    background-color: #00a1d6;
+    color: #fff;
+}
+
+.bui {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.bui-button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    cursor: pointer;
+    min-width: 68px;
+    height: 24px;
+    font-size: 12px;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background: none;
+    padding: 0;
+    outline: none;
+    color: inherit;
+    text-align: inherit;
+    line-height: inherit;
+}
+
+
+
+
+
+

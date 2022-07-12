@@ -1,0 +1,76 @@
+.VideoMain
+{
+	width: 1200px;
+	height: 1800px;
+	background-color: white;
+	margin: 0 auto;
+}
+.VideoHead
+{
+	padding-top: 10px;
+	width: 1200px;
+	height: 80px;
+}
+.VideoTitle
+{
+	float: left;
+}
+.VideoTitleName
+{
+    color: #212121;
+    line-height: 26px;
+}
+
+
+
+.VideoAuthorTitle
+{
+	float: right;
+	width: 300px;
+}
+
+.VideoPlayer
+{
+	width: 900px;
+	height: 560;
+	background-color: black;
+	float: left;
+}
+.VideoController
+{
+	width: 900px;
+	height: 50px;
+	background-color: white;
+}
+.DanmakuList
+{
+	width: 300px;
+	height: 560px;
+	background-color: #00FF00;
+	float: left;
+}
+.DanmakuListTitle
+{
+	background-color: #f4f4f4;
+	margin: 0 auto;
+	line-height: 46px;
+	height: 50px;
+	width: 290px;
+	font-size: 16px;
+    color: #222;
+    padding-left: 10px;
+}
+
+.VideoInfo
+{
+	width: 900px;
+	height: 200px;
+	background-color:#007DDB;
+	float: left;
+}
+.info{
+	width: 300px;
+	height: 600px;
+	float: right;
+	background-color: #009F95;
+}
